@@ -20,6 +20,26 @@ class UserController extends Controller
         }
     }
 
+    public function returnSpecificUser(Request $request)
+    {
+
+        $request->validate([
+            'user_id' => 'required',
+
+        ]);
+
+        $users = User::where('user_id', $request->user_id)->get();
+
+        if (count($users) > 0) {
+            return response()->json(["status" => "success", "message" => "user attached in user object", "users" => $users]);
+
+        } else {
+            return response()->json(["status" => "success", "message" => "No user with id ".$request->user_id." found"]);
+
+        }
+       
+    }
+
     //create read update delete
     public function create(Request $request)
     {

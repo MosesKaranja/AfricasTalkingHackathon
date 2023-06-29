@@ -1,0 +1,24 @@
+body{
+    /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url('https://plus.unsplash.com/premium_photo-1668713464564-f3f3c86c9ed0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  }
+  
+  .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+  .header, .para, .sign {
+      display: block;
+      text-align: center;
+      font-size: medium;
+      font-weight: bold;
+      
+  }

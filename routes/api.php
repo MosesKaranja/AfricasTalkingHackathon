@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DrugInformationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::get('/readUsers', [UserController::class, 'read']);
+Route::post('/returnSpecificUser', [UserController::class, 'returnSpecificUser']);
 Route::post('/createUser', [UserController::class, 'create']);
 Route::post('/updateUser', [UserController::class, 'updateUser']);
 Route::post('/deleteUser', [UserController::class, 'deleteUser']);
+
+Route::get('/loadAllDrugPrescriptions', [DrugInformationController::class, 'loadAllDrugPrescriptions']);
+Route::post('/loadUsersDrugPrescriptions', [DrugInformationController::class, 'loadUsersDrugPrescriptions']);
+Route::post('/createDrugPrescription', [DrugInformationController::class, 'createDrugPrescription']);
+
+Route::post('/updateDrugPrescription', [DrugInformationController::class, 'updateDrugPrescription']);
+Route::post('/deleteDrugPrescription', [DrugInformationController::class, 'deleteDrugPrescription']);
+
+Route::post('/sendReminderForPrescription', [DrugInformationController::class, 'sendReminderForPrescription']);
+
 
